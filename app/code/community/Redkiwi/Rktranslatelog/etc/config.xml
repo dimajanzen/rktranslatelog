@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Redkiwi_Rktranslatelog>
+            <version>0.1.0</version>
+        </Redkiwi_Rktranslatelog>
+    </modules>
+	
+	<adminhtml>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<rktranslatelog translate="title">
+											<title>Redkiwi Translate Log</title>
+											<sort_order>1000</sort_order>
+										</rktranslatelog>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+        </acl>
+    </adminhtml>
+	
+    <global>
+        <helpers>
+            <rktranslatelog>
+                <class>Redkiwi_Rktranslatelog_Helper</class>
+            </rktranslatelog>
+		</helpers>
+        <models>
+            <rktranslatelog>
+                <class>Redkiwi_Rktranslatelog_Model</class>
+            </rktranslatelog>
+            <core>
+                <rewrite>
+                    <translate>Redkiwi_Rktranslatelog_Model_Core_Translate</translate>
+                </rewrite>
+            </core>
+        </models>
+    </global>
+	
+	<default>
+        <rktranslatelog>
+            <general>
+                <logger>1</logger>
+                <translatecsv>0</translatecsv>
+            </general>
+		</rktranslatelog>
+    </default>
+</config>

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <redkiwi_tab translate="label">
+            <label>Redkiwi</label>
+            <sort_order>1000</sort_order>
+        </redkiwi_tab>
+    </tabs>
+	<sections>
+		<rktranslatelog translate="label">
+			<label>Redkiwi Translate Logger</label>
+			<sort_order>100</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<tab>redkiwi_tab</tab>
+			<groups>
+                <general translate="label,comment">
+                    <label>Log translation strings</label>
+                    <comment><![CDATA[Enable the Translation logger to log the individual untranslated strings.<br/>A translate file per language in can found in var/translate/[aa]_[AA]/translate.csv.<br/><br/>]]></comment>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<logger translate="label,comment">
+							<label>Enable Logger</label>
+							<comment><![CDATA[Log untranslated strings with module and language iso code to translate.log]]></comment>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</logger>
+						<translatecsv translate="label,comment">
+							<label>Enable translate.csv</label>
+							<comment><![CDATA[Write untranslated strings to a translate.csv per language]]></comment>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</translatecsv>
+					</fields>
+				</general>
+			</groups>
+		</rktranslatelog>
+	</sections>
+</config>
